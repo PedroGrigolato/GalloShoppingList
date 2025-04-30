@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-import {link} from 'expo-router'
+import { StyleSheet, Text, View, Image } from 'react-native';
+import {Link} from 'expo-router'
 
 export default function Welcome() {
   return (
@@ -14,7 +14,7 @@ export default function Welcome() {
         <Text style={styles.title}>
           Lista de compras braba!
         </Text>
-        <Text style={styles.Text}>
+        <Text style={styles.text}>
           Não esqueça mais suas compras com esse aplicativo sensacional!
         </Text>
         <Link style={styles.button} href={"/home"}>
