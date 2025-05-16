@@ -1,25 +1,27 @@
+import { Link } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Image } from 'react-native';
-import {Link} from 'expo-router'
 
 export default function Welcome() {
   return (
     <View style={styles.container}>
-      <View style={styles.container}>
-        <Image source={require('../assets/avatar.jpg')}
-         style={styles.avatar}
+      <View style={styles.containerImage}>
+        <Image 
+          source={require('../assets/image.png')}
+          style={styles.avatar}
         />
       </View>
       <View style={styles.content}>
         <Text style={styles.title}>
-          Lista de compras braba!
+          Chicken's Jr Shopping List
         </Text>
         <Text style={styles.text}>
-          Não esqueça mais suas compras com esse aplicativo sensacional!
+          Monte sua lista de compras e não esqueça mais o que precisa comprar ao sair de casa!!!
         </Text>
         <Link style={styles.button} href={"/home"}>
-          <Text style={styles.buttonText}>Acessar"</Text>
+          <Text style={styles.buttonText}>Acessar</Text>
         </Link>
+
       </View>
 
       <StatusBar style="light" backgroundColor='#000' />
@@ -34,7 +36,7 @@ const styles = StyleSheet.create({
   },
   containerImage: {
     flex: 2,
-    alignItems:'center',
+    alignItems: 'center',
     justifyContent: 'center',
   },
   avatar: {
@@ -43,11 +45,11 @@ const styles = StyleSheet.create({
     borderRadius: 115,
     resizeMode: 'cover',
   },
-  content: {
+  content:{
     flex: 1,
     backgroundColor: '#dadada',
-    borderTopLeftRadius: 25,
     borderTopRightRadius: 25,
+    BorderTopLeftRadius: 25,
     paddingHorizontal: '5%'
   },
   title: {
@@ -58,8 +60,8 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   text: {
-    fontSize: 16,
-    color: 'beige',
+    fontsize: 16,
+    color: 'gray',
   },
   button: {
     position: 'absolute',
@@ -68,11 +70,11 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     borderRadius: 50,
     paddingVertical: 15,
-    width:'60%',
+    width: '60%',
     textAlign: 'center',
   },
   buttonText: {
-    fontSize: 22,
+    fontsize: 22,
     color: '#ffffff',
     fontWeight: 'bold'
   }
