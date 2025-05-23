@@ -7,7 +7,7 @@ export default function Welcome() {
     <View style={styles.container}>
       <View style={styles.containerImage}>
         <Image 
-          source={require('../assets/image.png')}
+          source={require('../assets/avatar.jpg')}
           style={styles.avatar}
         />
       </View>

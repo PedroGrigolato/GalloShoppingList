@@ -8,12 +8,21 @@ export default function ItemList({ item, markItem, unmarkItem, removeItem}) {
        <Text style={item?.bought ? styles.itemBought : styles.itemToBuy}>
         {item?.name}
        </Text>
-       <TouchableOpacity style={styles.actionIcon}>
-            <IonIcons name='bag-check-outline' size={24} color='#fff' />
-       </TouchableOpacity>
-       <TouchableOpacity style={[styles.actionIcon, { backgroundColor: 'darked'}] }>
+        {!item?.bought? (
+          <TouchableOpacity style={styles.actionIcon} onPress={() => markItem(item.id)}>
+           <IonIcons name='bag-check-outline' size={24} color='#fff' />
+          </TouchableOpacity>
+       ) : (
+          <TouchableOpacity style={styles.actionIcon} onPress={() => unmarkItem(item.id)}>
+           <IonIcons name='bag-remove-outline' size={24} color='#fff' />
+          </TouchableOpacity>
+      )}
+      <TouchableOpacity 
+        style={[styles.actionIcon, { backgroundColor: 'darked'}] }
+        onPress={() => removeItem(item.id)}
+      >
         <IonIcons name='trash-bin-outline' size={24} color='#fff'/>
-       </TouchableOpacity>
+      </TouchableOpacity>
     </View>
   )
 }
@@ -30,14 +39,18 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
         alignItems: 'center'
     },
-
-    itemToBuy:{
+    itemToBuy: {
         flex: 1,
         color:'#fff',
         fontSize: 24,
         textDecorationLine: 'none'
     },
-
+    itemBought: {
+      flex: 1,
+      color: '#fff',
+      fontSize: 24,
+      textDecorationLine: 'line-throught'
+    },
     actionIcon:{
         height: 40,
         width: 40,
